@@ -1,0 +1,12 @@
+.antigravity/
+.claude/
+.codex/
+.copilot/
+.cursor/
+.gemini/
+.opencode/
+dist/
+.env
+node_modules/
+.next/
+out/
