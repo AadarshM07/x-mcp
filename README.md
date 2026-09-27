@@ -23,7 +23,34 @@ This server is built on top of [Nitrostack](https://nitrostack.ai) and uses **Pl
 3. **Start the server**
    Use your agent or run locally based on the framework you're using.
 
-## Currently Available Tools
+## Connecting to an AI Agent
+
+
+
+Here is the JSON configuration you can use to add this server:
+
+```json
+{
+  "mcpServers": {
+    "x-mcp": {
+      "command": "npm",
+      "args": [
+        "run",
+        "dev"
+      ],
+      "cwd": "/absolute/path/to/your/x-mcp",
+      "env": {
+        "TWITTER_AUTH_TOKEN": "your_auth_token_here",
+        "TWITTER_CT0": "your_ct0_cookie_here",
+        "SHOW_BROWSER": "false"
+      }
+    }
+  }
+}
+```
+
+
+## Available Tools
 
 | Tool Name | Description |
 |-----------|-------------|
