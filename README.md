@@ -23,7 +23,7 @@ This server is built on top of [Nitrostack](https://nitrostack.ai) and uses **Pl
 3. **Start the server**
    Use your agent or run locally based on the framework you're using.
 
-## Available Tools
+## Currently Available Tools
 
 | Tool Name | Description |
 |-----------|-------------|
@@ -33,7 +33,7 @@ This server is built on top of [Nitrostack](https://nitrostack.ai) and uses **Pl
 | `x_post` | Publish a new post on X |
 | `x_reply` | Reply to a specific post |
 | `x_like` | Like a specific post |
-| `x_repost` | Repost (retweet) a specific post |
+| `x_repost` | Repost a specific post |
 | `x_follow` | Follow a user on X |
 
 For detailed information on how to use each tool, including input schemas and use-cases, check out the [Tools Documentation](docs/tools.md).
