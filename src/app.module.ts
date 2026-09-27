@@ -1,16 +1,16 @@
 import { McpApp, Module, ConfigModule } from '@nitrostack/core';
-import { TwitterModule } from './modules/twitter/twitter.module.js';
+import { TwitterModule } from './modules/xapp/xapp.module.js';
 
 /**
  * Root Application Module
  * 
- * Twitter MCP Server
- * Tools for reading and writing to Twitter/X via Playwright automation.
+ * X MCP Server
+ * Tools for reading and writing to X via Playwright automation.
  */
 @McpApp({
     module: AppModule,
     server: {
-        name: 'twitter-mcp',
+        name: 'x-mcp',
         version: '1.0.0'
     },
     logging: {
@@ -19,7 +19,7 @@ import { TwitterModule } from './modules/twitter/twitter.module.js';
 })
 @Module({
     name: 'app',
-    description: 'Twitter MCP server',
+    description: 'X MCP server',
     imports: [
         ConfigModule.forRoot(),
         TwitterModule

@@ -1,6 +1,6 @@
 import { Module } from '@nitrostack/core';
-import { TwitterTools } from './twitter.tools.js';
-import { TwitterService } from './twitter.service.js';
+import { TwitterTools } from './xapp.tools.js';
+import { TwitterService } from './xapp.service.js';
 import { BrowserService } from './browser.service.js';
 
 @Module({

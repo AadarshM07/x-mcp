@@ -51,13 +51,13 @@ export class TwitterService {
 
             if (await inlineTextbox.isVisible()) {
                 await inlineTextbox.click();
-                await page.waitForTimeout(500); // Wait for editor to focus
+                await page.waitForTimeout(500); 
             } else {
                 const replyButton = page.locator('[data-testid="reply"]').first();
                 await replyButton.click();
                 await page.waitForSelector('[data-testid="tweetTextarea_0"]', { state: 'visible', timeout: 5000 });
                 await page.locator('[data-testid="tweetTextarea_0"]').first().click();
-                await page.waitForTimeout(500); // Wait for editor to focus
+                await page.waitForTimeout(500); 
             }
 
             await page.keyboard.type(text, { delay: 30 });

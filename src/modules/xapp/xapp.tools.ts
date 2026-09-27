@@ -1,13 +1,13 @@
 import { ToolDecorator as Tool, ExecutionContext, Injectable, z } from '@nitrostack/core';
-import { TwitterService } from './twitter.service.js';
+import { TwitterService } from './xapp.service.js';
 
 @Injectable({ deps: [TwitterService] })
 export class TwitterTools {
-    constructor(private readonly twitterService: TwitterService) {}
+    constructor(private readonly twitterService: TwitterService) { }
 
     @Tool({
-        name: 'twitter_search',
-        description: 'Search Twitter/X for tweets by keyword',
+        name: 'x_search',
+        description: 'Search X for posts by keyword',
         inputSchema: z.object({
             query: z.string().describe('Search query'),
             maxResults: z.number().optional().default(10).describe('Max tweets to return (default 10)'),
@@ -19,10 +19,10 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_user',
-        description: 'Get a Twitter/X user profile',
+        name: 'x_user',
+        description: 'Get an X user profile',
         inputSchema: z.object({
-            username: z.string().describe('Twitter username (without @)'),
+            username: z.string().describe('X username (without @)'),
         })
     })
     async getUserProfile(args: { username: string }, ctx: ExecutionContext) {
@@ -31,8 +31,8 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_post',
-        description: 'Post a tweet on Twitter/X',
+        name: 'x_post',
+        description: 'Publish a post on X',
         inputSchema: z.object({
             text: z.string().max(280).describe('Tweet text'),
         })
@@ -43,8 +43,8 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_reply',
-        description: 'Reply to a specific tweet',
+        name: 'x_reply',
+        description: 'Reply to a specific post on X',
         inputSchema: z.object({
             tweetUrl: z.string().describe('URL of the tweet to reply to'),
             text: z.string().describe('Reply text'),
@@ -56,8 +56,8 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_like',
-        description: 'Like a specific tweet',
+        name: 'x_like',
+        description: 'Like a specific post on X',
         inputSchema: z.object({
             tweetUrl: z.string().describe('URL of the tweet to like'),
         })
@@ -68,8 +68,8 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_retweet',
-        description: 'Retweet a specific tweet',
+        name: 'x_repost',
+        description: 'Repost (retweet) a specific post on X',
         inputSchema: z.object({
             tweetUrl: z.string().describe('URL of the tweet to retweet'),
         })
@@ -80,10 +80,10 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_follow',
-        description: 'Follow a user on Twitter/X',
+        name: 'x_follow',
+        description: 'Follow a user on X',
         inputSchema: z.object({
-            username: z.string().describe('Twitter username to follow (without @)'),
+            username: z.string().describe('X username to follow (without @)'),
         })
     })
     async followUser(args: { username: string }, ctx: ExecutionContext) {
@@ -92,8 +92,8 @@ export class TwitterTools {
     }
 
     @Tool({
-        name: 'twitter_feed',
-        description: 'Read your Twitter/X home feed',
+        name: 'x_feed',
+        description: 'Read your X home feed',
         inputSchema: z.object({
             maxResults: z.number().optional().default(20).describe('Max tweets to return (default 20)'),
         })
