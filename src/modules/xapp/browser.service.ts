@@ -4,8 +4,8 @@ import * as os from 'os';
 import * as path from 'path';
 import * as fs from 'fs';
 
-const PROFILE_DIR = path.join(os.homedir(), '.twitter-mcp', 'chrome-profile');
-const STORAGE_BACKUP = path.join(os.homedir(), '.twitter-mcp', 'storage_state.json');
+const PROFILE_DIR = path.join(os.homedir(), '.x-mcp', 'chrome-profile');
+const STORAGE_BACKUP = path.join(os.homedir(), '.x-mcp', 'storage_state.json');
 
 const BROWSER_ARGS = [
     '--no-sandbox',
@@ -46,12 +46,12 @@ export class BrowserService {
                 userAgent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36',
             });
 
-            const authToken = process.env.TWITTER_AUTH_TOKEN;
-            const ct0 = process.env.TWITTER_CT0;
+            const authToken = process.env.X_AUTH_TOKEN;
+            const ct0 = process.env.X_CT0;
 
             if (authToken && ct0) {
                 const cookies = [];
-                for (const domain of ['.x.com', '.twitter.com']) {
+                for (const domain of ['.x.com']) {
                     cookies.push(
                         { name: 'auth_token', value: authToken, domain, path: '/', secure: true, sameSite: 'None' as const },
                         { name: 'ct0', value: ct0, domain, path: '/', secure: true, sameSite: 'None' as const }

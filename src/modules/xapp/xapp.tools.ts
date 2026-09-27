@@ -1,9 +1,9 @@
 import { ToolDecorator as Tool, ExecutionContext, Injectable, z } from '@nitrostack/core';
-import { TwitterService } from './xapp.service.js';
+import { XAppService } from './xapp.service.js';
 
-@Injectable({ deps: [TwitterService] })
-export class TwitterTools {
-    constructor(private readonly twitterService: TwitterService) { }
+@Injectable({ deps: [XAppService] })
+export class XAppTools {
+    constructor(private readonly xAppService: XAppService) { }
 
     @Tool({
         name: 'x_search',
@@ -15,7 +15,7 @@ export class TwitterTools {
     })
     async searchTweets(args: { query: string; maxResults: number }, ctx: ExecutionContext) {
         ctx.logger.info(`Searching tweets for query: ${args.query}`);
-        return await this.twitterService.searchTweets(args.query, args.maxResults);
+        return await this.xAppService.searchTweets(args.query, args.maxResults);
     }
 
     @Tool({
@@ -27,7 +27,7 @@ export class TwitterTools {
     })
     async getUserProfile(args: { username: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Getting profile for ${args.username}`);
-        return await this.twitterService.getUserProfile(args.username);
+        return await this.xAppService.getUserProfile(args.username);
     }
 
     @Tool({
@@ -39,7 +39,7 @@ export class TwitterTools {
     })
     async postTweet(args: { text: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Posting tweet`);
-        return await this.twitterService.postTweet(args.text);
+        return await this.xAppService.postTweet(args.text);
     }
 
     @Tool({
@@ -52,7 +52,7 @@ export class TwitterTools {
     })
     async replyToTweet(args: { tweetUrl: string; text: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Replying to tweet ${args.tweetUrl}`);
-        return await this.twitterService.replyToTweet(args.tweetUrl, args.text);
+        return await this.xAppService.replyToTweet(args.tweetUrl, args.text);
     }
 
     @Tool({
@@ -64,7 +64,7 @@ export class TwitterTools {
     })
     async likeTweet(args: { tweetUrl: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Liking tweet ${args.tweetUrl}`);
-        return await this.twitterService.likeTweet(args.tweetUrl);
+        return await this.xAppService.likeTweet(args.tweetUrl);
     }
 
     @Tool({
@@ -76,7 +76,7 @@ export class TwitterTools {
     })
     async retweet(args: { tweetUrl: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Retweeting tweet ${args.tweetUrl}`);
-        return await this.twitterService.retweet(args.tweetUrl);
+        return await this.xAppService.retweet(args.tweetUrl);
     }
 
     @Tool({
@@ -88,7 +88,7 @@ export class TwitterTools {
     })
     async followUser(args: { username: string }, ctx: ExecutionContext) {
         ctx.logger.info(`Following user ${args.username}`);
-        return await this.twitterService.followUser(args.username);
+        return await this.xAppService.followUser(args.username);
     }
 
     @Tool({
@@ -100,6 +100,6 @@ export class TwitterTools {
     })
     async readFeed(args: { maxResults: number }, ctx: ExecutionContext) {
         ctx.logger.info(`Reading feed`);
-        return await this.twitterService.readFeed(args.maxResults);
+        return await this.xAppService.readFeed(args.maxResults);
     }
 }

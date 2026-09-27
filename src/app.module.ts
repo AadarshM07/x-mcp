@@ -1,5 +1,5 @@
 import { McpApp, Module, ConfigModule } from '@nitrostack/core';
-import { TwitterModule } from './modules/xapp/xapp.module.js';
+import { XAppModule } from './modules/xapp/xapp.module.js';
 
 /**
  * Root Application Module
@@ -22,7 +22,7 @@ import { TwitterModule } from './modules/xapp/xapp.module.js';
     description: 'X MCP server',
     imports: [
         ConfigModule.forRoot(),
-        TwitterModule
+        XAppModule
     ],
 })
 export class AppModule { }

@@ -13,8 +13,8 @@ This server is built on top of [Nitrostack](https://nitrostack.ai) and uses **Pl
 2. **Environment Variables**
    Create a `.env` file in the root directory and add your X authentication tokens. You can extract these from your browser cookies when logged into X:
    ```env
-   TWITTER_AUTH_TOKEN=your_auth_token_here
-   TWITTER_CT0=your_ct0_cookie_here
+   X_AUTH_TOKEN=your_auth_token_here
+   X_CT0=your_ct0_cookie_here
    
    # Set to 'true' to watch the browser process, or 'false' to run silently in the background
    SHOW_BROWSER=false
@@ -40,8 +40,8 @@ Here is the JSON configuration you can use to add this server:
       ],
       "cwd": "/absolute/path/to/your/x-mcp",
       "env": {
-        "TWITTER_AUTH_TOKEN": "your_auth_token_here",
-        "TWITTER_CT0": "your_ct0_cookie_here",
+        "X_AUTH_TOKEN": "your_auth_token_here",
+        "X_CT0": "your_ct0_cookie_here",
         "SHOW_BROWSER": "false"
       }
     }

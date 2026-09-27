@@ -2,7 +2,7 @@ import { Injectable, Logger } from '@nitrostack/core';
 import { BrowserService } from './browser.service.js';
 
 @Injectable({ deps: [BrowserService] })
-export class TwitterService {
+export class XAppService {
     constructor(private readonly browserService: BrowserService) {}
 
     private async waitForLoad(page: any) {
