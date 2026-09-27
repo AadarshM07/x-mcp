@@ -1,54 +1,41 @@
-# NitroStack Pizzaz Template
+# X MCP Server
 
-Template focused on rich, interactive widget experiences (map/list/detail flows)
-using the NitroStack widget SDK patterns.
+I just wanted to automate my X (formerly Twitter) handle, gain connections, and build an audience - all while sleeping. This Model Context Protocol (MCP) server allows AI agents to fully control an X account to create posts, search for relevant posts, analyze users, follow interesting people, and reply automatically.
 
-## What This Template Includes
+## How it works
+This server is built on top of [Nitrostack](https://nitrostack.com) and uses **Playwright** to run a simulated browser. Unlike fragile API bots that get banned or run into rate limits, this server literally drives a real browser instance, making it behave exactly like a human user. It uses your own auth tokens to maintain a persistent session.
 
-- Widget-heavy module and UI structure
-- Interactive examples for advanced frontends
-- Optional map provider integration pattern
-- Studio-friendly development workflow
+## Installation & Setup
 
-## Quick Start
+1. **Install Dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npx @nitrostack/cli init my-pizzaz-app --template typescript-pizzaz
-cd my-pizzaz-app
-npm run dev
-```
+2. **Environment Variables**
+   Create a `.env` file in the root directory and add your X authentication tokens. You can extract these from your browser cookies when logged into X:
+   ```env
+   TWITTER_AUTH_TOKEN=your_auth_token_here
+   TWITTER_CT0=your_ct0_cookie_here
+   
+   # Set to 'true' to watch the browser process, or 'false' to run silently in the background
+   SHOW_BROWSER=false
+   ```
 
-## Optional Configuration
+3. **Start the server**
+   Use your agent or run locally based on the framework you're using.
 
-If this project uses a map provider, configure API tokens in widget `.env` files
-as documented in the template source.
+## Available Tools
 
-## Common Commands
+| Tool Name | Description |
+|-----------|-------------|
+| `x_search` | Search X for posts by keyword |
+| `x_feed` | Read your X home feed |
+| `x_user` | Get an X user profile details |
+| `x_post` | Publish a new post on X |
+| `x_reply` | Reply to a specific post |
+| `x_like` | Like a specific post |
+| `x_repost` | Repost (retweet) a specific post |
+| `x_follow` | Follow a user on X |
 
-```bash
-npm run dev
-npm run build
-npm start
-npm run widget <command>
-```
-
-## NitroStudio
-
-NitroStudio is the fastest way to test and debug interactive widget output.
-
-- Download: <https://nitrostack.ai/studio>
-- Studio: <https://nitrostack.ai/studio>
-
-## Links
-
-- Docs: <https://docs.nitrostack.ai>
-- Widgets docs: <https://docs.nitrostack.ai/sdk/typescript/ui/widgets>
-- Main repository: <https://github.com/nitrocloudofficial/nitrostack>
-
-## Community
-
-- Discord: <https://discord.gg/uVWey6UhuD>
-- X: <https://x.com/nitrostackai>
-- YouTube: <https://www.youtube.com/@nitrostackai>
-- LinkedIn: <https://linkedin.com/company/nitrostack-ai/>
-- GitHub: <https://github.com/nitrostackai>
+For detailed information on how to use each tool, including input schemas and use-cases, check out the [Tools Documentation](docs/tools.md).
