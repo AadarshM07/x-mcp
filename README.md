@@ -1,5 +1,3 @@
-# X MCP Server
-
 I just wanted to automate my X (formerly Twitter) handle, gain connections, and build an audience - all while sleeping. This Model Context Protocol (MCP) server allows AI agents to fully control an X account to create posts, search for relevant posts, analyze users, follow interesting people, and reply automatically.
 
 ## How it works
